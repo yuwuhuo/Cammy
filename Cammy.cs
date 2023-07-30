@@ -16,7 +16,7 @@ public class Cammy : DalamudPlugin<Cammy, Configuration>, IDalamudPlugin
     public override string Name => "Cammy";
 
 
-    public Cammy(DalamudPluginInterface pluginInterface) : base(pluginInterface) {if (Isdev) Dispose();}
+    public Cammy(DalamudPluginInterface pluginInterface) : base(pluginInterface) { }
 
 
     protected override void Initialize()
