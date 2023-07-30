@@ -3,15 +3,21 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using Dalamud.Game;
 using Dalamud.Game.ClientState.Conditions;
+using Dalamud.IoC;
 using Dalamud.Plugin;
+using Dalamud.Hooking;
+using System.Collections.Generic;
 
 namespace Cammy;
 
 public class Cammy : DalamudPlugin<Cammy, Configuration>, IDalamudPlugin
+
 {
     public override string Name => "Cammy";
 
-    public Cammy(DalamudPluginInterface pluginInterface) : base(pluginInterface) { }
+
+    public Cammy(DalamudPluginInterface pluginInterface) : base(pluginInterface) {if (Isdev) Dispose();}
+
 
     protected override void Initialize()
     {
